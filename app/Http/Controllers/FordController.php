@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * composer组件化开发初探
+ */
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;

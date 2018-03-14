@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/fusion', "FordController@index");
+Route::get('/redisset', "RedisTestController@redisTest");
 

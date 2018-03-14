@@ -28,6 +28,7 @@ return [
     |
     */
 
+    //连接：
     'connections' => [
 
         'sync' => [
@@ -60,7 +61,7 @@ return [
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
-            'queue' => 'default',
+            'queue' => 'default',//当新的队列任务被添加到指定的连接时，默认监听的队列名称
             'retry_after' => 90,
             'block_for' => null,
         ],
