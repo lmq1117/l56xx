@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Http\Controllers\TestController;
 
 class SendEmails extends Command
 {
@@ -11,23 +12,25 @@ class SendEmails extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'email:send {user}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = '发送邮件到user用户';
+    protected $drip;
 
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(TestController $drip)
     {
         parent::__construct();
+        $this->drip = $drip;
     }
 
     /**
@@ -38,5 +41,6 @@ class SendEmails extends Command
     public function handle()
     {
         //
+        $this->drip->TestSentMail('56701117');
     }
 }

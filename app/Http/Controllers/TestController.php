@@ -10,9 +10,9 @@ use Illuminate\Support\Facades\Mail;
 class TestController extends Controller
 {
     //
-    public function TestSentMail(){
+    public function TestSentMail($qq){
         //直接发送邮件
-        //$res = Mail::to('56701117@qq.com')->send(new RegisterSuccess());
+        return $res = Mail::to($qq.'@qq.com')->send(new RegisterSuccess($qq));
         //var_dump($res);//NULL
 
         //邮件消息队列
@@ -21,6 +21,7 @@ class TestController extends Controller
         //var_dump($res);
         //$this->dispatch(new MailQueue());
         //(new MailQueue())->handle();
-        dispatch(new MailQueue());
+        //dispatch(new MailQueue());
+
     }
 }
