@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 Route::get('/fusion', "FordController@index");
 Route::get('/redisset', "RedisTestController@redisTest");
+Route::get('/mailtest', "TestController@TestSentMail");
 

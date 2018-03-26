@@ -28,7 +28,8 @@ return [
     |
     */
 
-    //连接：
+    //连接：sync sqs redis database
+    //队列的目的 将耗时较长的任务延时处理，从而缩短web请求和响应时间
     'connections' => [
 
         'sync' => [

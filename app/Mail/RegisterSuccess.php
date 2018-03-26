@@ -28,6 +28,6 @@ class RegisterSuccess extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('emails.users.registersuccess')->with('date',date('Y-m-d H:i:s',time()));
     }
 }
