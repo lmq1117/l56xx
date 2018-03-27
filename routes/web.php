@@ -18,3 +18,12 @@ Route::get('/fusion', "FordController@index");
 Route::get('/redisset', "RedisTestController@redisTest");
 Route::get('/mailtest', "TestController@TestSentMail");
 
+
+//====路由 - 入门
+//1 闭包
+Route::get('/hello',function () {
+    return "welcome to l56xx！";
+});
+
+//2
+
