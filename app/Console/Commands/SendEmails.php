@@ -40,7 +40,23 @@ class SendEmails extends Command
      */
     public function handle()
     {
-        //
-        $this->drip->TestSentMail('56701117');
+        //命令执行期间交互输入一些信息
+        //$name = $this->ask('What is your name ?');
+
+        //获取命令执行的参数
+        $user_qq = $this->argument('user');
+
+        //发送邮件
+        //$this->drip->TestSentMail($user_qq);
+
+        $this->info('你输入的QQ号是：' . $user_qq);
+        //if($user_qq == '3651967') $this->error("你已经给 " . $user_qq ." 发送过邮件啦！请不要短时间内再次发送！");
+
+        $headers = ['用户名','邮箱地址'];
+        $users = [
+            ['风清扬','56701117@qq.com'],
+            ['李明权','3651967@qq.com'],
+        ];
+        $this->table($headers, $users);
     }
 }
