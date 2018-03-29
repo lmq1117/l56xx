@@ -11,6 +11,7 @@
 |
 */
 
+//生命周期概览1 创建服务容器实例
 $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );

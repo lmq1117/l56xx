@@ -24,4 +24,9 @@ class TestController extends Controller
         //dispatch(new MailQueue());
 
     }
+
+    public function ddapp()
+    {
+        //var_dump($app);
+    }
 }

@@ -26,6 +26,7 @@ Route::get('/hello',function () {
 });
 
 //2
+Route::get('/app','TestController@ddapp');
 
 
 Auth::routes();
