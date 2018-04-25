@@ -1,16 +1,25 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: *");
-header("Access-Control-Allow-Headers: *");
+$data = [
+	['name' => '风清扬', 'sex' => 1, 'age' => 109],
+	['name' => '令狐冲', 'sex' => 1, 'age' => 28],
+	['name' => '任我行', 'sex' => 1, 'age' => 58],
+	['name' => '不可不戒', 'sex' => 0, 'age' => 55],
+];
+echo json_encode($data);
+
+// phpinfo();
+//header("Access-Control-Allow-Origin: *");
+//header("Access-Control-Allow-Methods: *");
+//header("Access-Control-Allow-Headers: *");
 // header("Access-Control-Allow-Origin: *");
 // header("Access-Control-Allow-Headers", "GET, PUT, POST, OPTIONS, DELETE, X-XSRF-TOKEN, hrjkToken");
 // header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 // header('content-Type:text/html;charset=utf-8;');
-header('content-Type:text/html;charset=utf-8;');
-echo "<pre>";
-print_r($_SERVER);
-print_r($_REQUEST);
-echo "</pre>";
+//header('content-Type:text/html;charset=utf-8;');
+//echo "<pre>";
+//print_r($_SERVER);
+//print_r($_REQUEST);
+//echo "</pre>";
 
 // $arr = ['1', '2'];
 // if ( $request_method = 'OPTIONS' ) {
