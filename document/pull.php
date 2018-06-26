@@ -65,7 +65,7 @@ $payload = json_decode($json);
 switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
 	case 'ping':
 		echo 'pong';
-		file_put_contents('/usr/local/nginx/html/pull/ping.log',date('Y-m-d H:i:s'). '----' .json_encode($json) ,FILE_APPEND);
+		file_put_contents('/usr/local/nginx/html/pull/ping.log',date('Y-m-d H:i:s'). '----' . json_encode($_SERVER) .'--------'.json_encode($json) ,FILE_APPEND);
 		break;
 
 //	case 'push':
@@ -75,7 +75,7 @@ switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
 //		break;
 
 	default:
-        file_put_contents('/usr/local/nginx/html/pull/default.log',date('Y-m-d H:i:s'). '----' .json_encode($json) ,FILE_APPEND);
+        file_put_contents('/usr/local/nginx/html/pull/default.log',date('Y-m-d H:i:s'). '----'. json_encode($_SERVER) . '--------' .json_encode($json) ,FILE_APPEND);
         header('HTTP/1.0 404 Not Found');
 		echo "Event:$_SERVER[HTTP_X_GITHUB_EVENT] Payload:\n";
 		print_r($payload); # For debug only. Can be found in GitHub hook log.
