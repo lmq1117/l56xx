@@ -8,6 +8,7 @@
  */
 
 $hookSecret = 'lPull';  # set NULL to disable check
+date_default_timezone_set('PRC');
 
 
 set_error_handler(function($severity, $message, $file, $line) {
