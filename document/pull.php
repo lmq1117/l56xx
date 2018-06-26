@@ -68,8 +68,12 @@ switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
 		file_put_contents('/usr/local/nginx/html/pull/ping.log',date('Y-m-d H:i:s'). '----' . json_encode($_SERVER) .'--------'.json_encode($json) ,FILE_APPEND);
 		break;
 
-//	case 'push':
-//		break;
+	case 'push':
+	    $local = '/usr/local/nginx/html/l56xx';
+        echo shell_exec("cd {$local} && git pull 2>&1");
+        file_put_contents('/usr/local/nginx/html/pull/push.log',date('Y-m-d H:i:s'). '----' . json_encode($_SERVER) .'--------'.json_encode($json) ,FILE_APPEND);
+        die("done " . date('Y-m-d H:i:s', time()));
+		break;
 
 //	case 'create':
 //		break;
