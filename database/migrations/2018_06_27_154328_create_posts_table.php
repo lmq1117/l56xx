@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('title');//文章标题
             $table->text('content');//文章内容
             $table->timestamps();
-            $table->timestamp('published_at')->index();//文章正式发布时间
+            $table->timestamp('published_at')->default(0)->index();//文章正式发布时间
         });
     }
 
