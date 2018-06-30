@@ -15,6 +15,11 @@ class CheckToken
      */
     public function handle($request, Closure $next)
     {
+        if($request->input('token') != 'l56xx')
+        {
+            return redirect()->to('http://www.baidu.com');
+
+        }
         return $next($request);
     }
 }
