@@ -9,6 +9,6 @@ class TokenController extends Controller
     //
     public function check()
     {
-        return 'check controller';
+        return 'token controller check method';
     }
 }
