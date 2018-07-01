@@ -26,7 +26,7 @@ Route::get('from_with_out_csrf_token', function () {
 #带token字段的表单
 Route::get('from_with_csrf_token', function () {
     return '<from method="POST" action="hello_from_form">
-                ' . csrf_token() . '
+                ' . csrf_field() . '
                 <button type="submit">提交</button>
             </from>';
 });
