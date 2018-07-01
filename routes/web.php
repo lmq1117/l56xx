@@ -14,3 +14,24 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+#演示CSRF
+#不带token字段的表单
+Route::get('from_with_out_csrf_token', function () {
+    return '<from method="POST" action="hello_from_form">
+            <button type="submit">提交</button>
+            </from>';
+});
+
+#带token字段的表单
+Route::get('from_with_csrf_token', function () {
+    return '<from method="POST" action="hello_from_form">
+                ' . csrf_token() . '
+                <button type="submit">提交</button>
+            </from>';
+});
+
+#action Route
+Route::post('hello_from_form', function () {
+    return 'hello laravel csrf token!';
+});
