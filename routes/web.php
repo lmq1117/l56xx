@@ -18,17 +18,17 @@ Route::get('/', function () {
 #演示CSRF
 #不带token字段的表单
 Route::get('from_with_out_csrf_token', function () {
-    return '<from method="POST" action="hello_from_form">
+    return '<form method="POST" action="hello_from_form">
             <button type="submit">提交</button>
-            </from>';
+            </form>';
 });
 
 #带token字段的表单
 Route::get('from_with_csrf_token', function () {
-    return '<from method="POST" action="hello_from_form">
+    return '<form method="POST" action="hello_from_form">
                 ' . csrf_field() . '
                 <button type="submit">提交</button>
-            </from>';
+            </form>';
 });
 
 #action Route
