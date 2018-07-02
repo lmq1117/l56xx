@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('title');//文章标题
             $table->text('content');//文章内容
             $table->integer('published_at',false,true)->default(0);//文章正式发布时间
-            $table->integer('created_at',false,true)->default('unix_timestamp()');
+            $table->integer('created_at',false,true)->default(unix_timestamp());
             $table->integer('updated_at',false,true)->default(0);
 
 //            $this->timestamp('updated_at', $precision)->nullable();
