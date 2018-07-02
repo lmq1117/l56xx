@@ -8,7 +8,7 @@ class Post extends Model
 {
     //
 
-    protected function getDateFormat()
+    public function getDateFormat()
     {
         return 'U';
     }
