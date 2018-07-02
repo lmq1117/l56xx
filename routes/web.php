@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 
 Route::get('user/{id}','UserController@show');
+
+//单动作控制器  注册路由时，不用指定方法名
+Route::get('us/{id}','ShowProfile');
