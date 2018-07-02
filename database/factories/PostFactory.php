@@ -3,7 +3,7 @@
 use Faker\Generator as Faker;
 
 $factory->define(App\Post::class, function (Faker $faker) {
-    var_dump()
+//    var_dump()
     return [
         //
         'title' => $faker->sentence(mt_rand(3,10)),
