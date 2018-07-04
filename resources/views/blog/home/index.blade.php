@@ -25,7 +25,7 @@
             @endforeach
         </ul>
         <hr>
-        {!! $post->render() !!}
+        {!! $posts->render() !!}
     </div>
 </body>
 </html>
