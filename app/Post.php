@@ -24,4 +24,9 @@ class Post extends Model
             $this->attributes['slug'] = str_slug($value);
         }
     }
+
+    public function getPublishedAtAttribute()
+    {
+        return date('Y-m-d H:i:s',$this->attributes['published_at']);
+    }
 }

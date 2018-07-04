@@ -11,18 +11,17 @@ class BlogController extends Controller
     //
     public function index()
     {
-//        $posts = Post::where('published_at','<=',Carbon::now())
         $posts = Post::where('published_at','<=',time())
             ->ordreBy('published_at','desc')
             ->paginate(config('blog.posts_per_page'));
 
-        return view('blog.index',compact('posts'));
+        return view('blog.home.index',compact('posts'));
     }
 
 
     public function showPost($slug)
     {
         $post = Post::where('slug','=',$slug)->firstOrFail();
-        return view('blog.post')->withPost($post);
+        return view('blog.home.post')->with(['post'=>$post]);
     }
 }
