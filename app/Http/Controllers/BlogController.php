@@ -20,9 +20,9 @@ class BlogController extends Controller
     }
 
 
-    public function showPost()
+    public function showPost($slug)
     {
-        $post = Post::whereSlug($slug)->firstOrFail();
+        $post = Post::where('slug','=',$slug)->firstOrFail();
         return view('blog.post')->withPost($post);
     }
 }

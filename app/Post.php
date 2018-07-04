@@ -15,6 +15,7 @@ class Post extends Model
 
     protected $dates = ['published_at'];
 
+    //当设置title值时，自动给slug字段赋值
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = $value;
