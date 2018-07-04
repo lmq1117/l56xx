@@ -12,7 +12,7 @@ class BlogController extends Controller
     public function index()
     {
         $posts = Post::where('published_at','<=',time())
-            ->ordreBy('published_at','desc')
+            ->orderBy('published_at','desc')
             ->paginate(config('blog.posts_per_page'));
 
         return view('blog.home.index',compact('posts'));
