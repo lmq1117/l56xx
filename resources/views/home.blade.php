@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in!<hr>
+                    2018
                 </div>
             </div>
         </div>
