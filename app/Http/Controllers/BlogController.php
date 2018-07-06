@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 use App\Post;
-use Carbon\Carbon;
+//use Carbon\Carbon;
 
 class BlogController extends Controller
 {
