@@ -24,4 +24,15 @@ class BlogController extends Controller
         $post = Post::where('slug','=',$slug)->firstOrFail();
         return view('blog.home.post')->with(['post'=>$post]);
     }
+
+
+    public function test()
+    {
+        $user = new App\User;
+        $user->name = 'lmq1117';
+        $user->email = 'lmq1117@qq.com';
+        $user->password = bcrypt('123456');
+        $user->save();
+
+    }
 }
