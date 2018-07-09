@@ -4,7 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Name
+    | Application Name 应用名称
     |--------------------------------------------------------------------------
     |
     | This value is the name of your application. This value is used when the
@@ -17,7 +17,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Environment
+    | Application Environment 应用环境
     |--------------------------------------------------------------------------
     |
     | This value determines the "environment" your application is currently
@@ -30,7 +30,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Debug Mode
+    | Application Debug Mode 调试模式
     |--------------------------------------------------------------------------
     |
     | When your application is in debug mode, detailed error messages with
@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'PRC',
 
     /*
     |--------------------------------------------------------------------------
@@ -110,7 +110,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Autoloaded Service Providers
+    | Autoloaded Service Providers 自动加载的服务提供者
     |--------------------------------------------------------------------------
     |
     | The service providers listed here will be automatically loaded on the
@@ -164,7 +164,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Class Aliases
+    | Class Aliases 类 别名
     |--------------------------------------------------------------------------
     |
     | This array of class aliases will be registered when this application

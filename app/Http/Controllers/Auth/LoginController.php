@@ -34,6 +34,8 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        //除了logout方法都使用guest中间件
+        //guest中间件的作用是判断用户是否登陆状态，跳转到home ??
         $this->middleware('guest')->except('logout');
     }
 }
