@@ -12,7 +12,7 @@ class RegisterController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | Register Controller
+    | Register Controller 处理新用户注册
     |--------------------------------------------------------------------------
     |
     | This controller handles the registration of new users as well as their
