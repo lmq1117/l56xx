@@ -11,7 +11,7 @@ class UserInfo extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\Model\baseEloquentORM\User','user_id','id');
+        return $this->belongsTo('App\Model\BaseEloquentORM\User','user_id','id');
     }
 
 }
