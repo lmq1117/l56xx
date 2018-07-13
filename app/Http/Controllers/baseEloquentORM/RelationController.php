@@ -42,7 +42,7 @@ class RelationController extends Controller
 
     public function hasManyWhereGet($user_id)
     {
-        $orders = User::find($user_id)->user()->where('id','>',2)->get();
+        $orders = User::find($user_id)->order()->where('id','>',2)->get();
     }
 
 
