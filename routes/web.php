@@ -14,4 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('orm/flight/all','baseEloquentORM\FlightController@all');
+Route::get('orm/relation/all','baseEloquentORM\RelationController@all');
