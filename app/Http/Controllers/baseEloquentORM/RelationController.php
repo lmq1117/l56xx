@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\BaseEloquentORM\User;
 use App\Model\BaseEloquentORM\UserInfo;
+use App\Model\BaseEloquentORM\Order;
 
 class RelationController extends Controller
 {
@@ -21,9 +22,21 @@ class RelationController extends Controller
         return $info;
     }
 
-    public function belongsTo()
+    public function belongsToForHasOne()
     {
         $user = UserInfo::find(4)->user;
+        return $user;
+    }
+
+    public function hasMany()
+    {
+        $orders = User::find(4)->order;
+        return $orders;
+    }
+
+    public function belongsToForHasMany()
+    {
+        $user = Order::find(5)->user;
         return $user;
     }
 

@@ -14,4 +14,9 @@ class User extends Model
         return $this->hasOne('App\Model\BaseEloquentORM\UserInfo','user_id','id');
     }
 
+    public function order()
+    {
+        return $this->hasMany('App\Model\BaseEloquentORM\Order','user_id','id');
+    }
+
 }
