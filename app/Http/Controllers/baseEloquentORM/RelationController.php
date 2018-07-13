@@ -14,4 +14,13 @@ class RelationController extends Controller
     {
         return User::all();
     }
+
+    public function hasOne()
+    {
+        $info = User::find(1)->userInfo;
+        return $info;
+
+    }
+
+
 }

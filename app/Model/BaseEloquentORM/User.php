@@ -9,4 +9,9 @@ class User extends Model
     protected $table = 'base_eloquent_orm_users';
     public $timestamps = false;
 
+    public function userInfo()
+    {
+        return $this->hasOne('App\baseEloquentORM\UserInfo','user_id','id');
+    }
+
 }
