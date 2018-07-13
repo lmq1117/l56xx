@@ -11,7 +11,7 @@ class User extends Model
 
     public function userInfo()
     {
-        return $this->hasOne('App\baseEloquentORM\UserInfo','user_id','id');
+        return $this->hasOne('App\Model\baseEloquentORM\UserInfo','user_id','id');
     }
 
 }
