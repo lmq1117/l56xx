@@ -19,7 +19,12 @@ class RelationController extends Controller
     {
         $info = User::find(1)->userInfo;
         return $info;
+    }
 
+    public function belongsTo()
+    {
+        $user = UserInfo::find(4)->user;
+        return $user;
     }
 
 

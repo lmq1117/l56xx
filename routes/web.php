@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('orm/flight/all','baseEloquentORM\FlightController@all');
 Route::get('orm/relation/all','baseEloquentORM\RelationController@all');
 Route::get('orm/relation/has_one','baseEloquentORM\RelationController@hasOne');
+Route::get('orm/relation/belongs_to','baseEloquentORM\RelationController@belongsTo');
