@@ -34,6 +34,7 @@ class TestController extends Controller
 
     public function log1()
     {
-        SendAdEmails::dispatch();
+        $send = new SendAdEmails();
+        SendAdEmails::dispatch($send);
     }
 }
