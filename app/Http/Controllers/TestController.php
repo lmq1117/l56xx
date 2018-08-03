@@ -19,7 +19,7 @@ class TestController extends Controller
     {
         $content = "纯文本邮件测试" . date('Y-m-d H:i:s');
         $flag = Mail::raw($content, function ($message) {
-            $to = 'lmq1117@qq.com';
+            $to = '56701117@qq.com';
             $message->to($to)->subject("纯文本邮件测试");
         });
         if (!$flag) {
