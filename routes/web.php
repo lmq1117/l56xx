@@ -17,4 +17,4 @@ Route::get('/', function () {
 
 Route::get('rds','TestController@rds');
 Route::get('mt','TestController@send');
-Route::get('lq','TestController@log');
+Route::get('lq','TestController@log1');
