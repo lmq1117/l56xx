@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redis;
-use App\Jobs\SendAdEmails;
+//use App\Jobs\SendAdEmails;
 
 class TestController extends Controller
 {
@@ -34,6 +34,6 @@ class TestController extends Controller
 
     public function log()
     {
-        SendAdEmails::dispatch();
+        \App\Jobs\SendAdEmails::dispatch();
     }
 }
