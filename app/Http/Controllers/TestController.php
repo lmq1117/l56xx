@@ -22,6 +22,7 @@ class TestController extends Controller
             $to = '56701117@qq.com';
             $message->to($to)->subject("纯文本邮件测试");
         });
+        //var_dump($flag);
         if (!$flag) {
             return '发送邮件成功，请查收！';
         } else {
