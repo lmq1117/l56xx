@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redis;
+use App\Jobs\SendAdEmails;
 
 class TestController extends Controller
 {
@@ -28,5 +29,11 @@ class TestController extends Controller
         } else {
             return '发送邮件失败，请重试！';
         }
+    }
+
+
+    public function log()
+    {
+        SendAdEmails::dispatch();
     }
 }

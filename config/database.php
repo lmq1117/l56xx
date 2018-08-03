@@ -108,11 +108,39 @@ return [
 
         'client' => 'predis',
 
+        //'default' => [
+        //    'host' => env('REDIS_HOST', '127.0.0.1'),
+        //    'password' => env('REDIS_PASSWORD', null),
+        //    'port' => env('REDIS_PORT', 6379),
+        //    'database' => 0,
+        //],
+
         'default' => [
-            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'host' => env('REDIS_HOST', 'localhost'),
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', 6379),
-            'database' => 0,
+            'database' => env('REDIS_DATABASE', 1),// default 和 cache 共用一个库, 不然默认情况下Cache类和Redis类操作的不是同一个库
+        ],
+
+        'cache' => [
+            'host' => env('REDIS_HOST', 'localhost'),
+            'password' => env('REDIS_PASSWORD', null),
+            'port' => env('REDIS_PORT', 6379),
+            'database' => env('REDIS_DATABASE', 1),// default 和 cache 共用一个库, 不然默认情况下Cache类和Redis类操作的不是同一个库
+        ],
+
+        'queue' => [
+            'host' => env('REDIS_HOST', 'localhost'),
+            'password' => env('REDIS_PASSWORD', null),
+            'port' => env('REDIS_PORT', 6379),
+            'database' => 2,
+        ],
+
+        'session_redis' => [
+            'host' => env('REDIS_HOST', 'localhost'),
+            'password' => env('REDIS_PASSWORD', null),
+            'port' => env('REDIS_PORT', 6379),
+            'database' => 3, // session 条目众多, 与其他redis库分开
         ],
 
     ],

@@ -7,6 +7,8 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 
 class sendAdEmails implements ShouldQueue
 {
@@ -30,5 +32,10 @@ class sendAdEmails implements ShouldQueue
     public function handle()
     {
         //
+        $delay = mt_rand(1,8);
+        sleep($delay);
+        $log = new Logger('sendAdEmails');
+        $log->pushHandler(new StreamHandler(storage_path('logs/sendAdEmails.log'),Logger::WARNING));
+        $log->info("本次邮件发送等待了".$delay ."秒");
     }
 }

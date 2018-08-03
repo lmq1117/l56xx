@@ -59,7 +59,7 @@ return [
 
         'redis' => [
             'driver' => 'redis',
-            'connection' => 'default',
+            'connection' => 'queue',//database配置中的redis连接
             'queue' => 'default',
             'retry_after' => 90,
             'block_for' => null,
