@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Horizon\Horizon;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,9 +13,14 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Request $request)
     {
         //
+        Horizon::auth(function ($request) {
+            if($request->name == 'limq'){
+                return true;
+            }
+        });
     }
 
     /**

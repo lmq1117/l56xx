@@ -23,11 +23,11 @@ class TestController extends Controller
 //            dispatch(new CreateUser());
 //        }
 
-        User::create(
-            [
-                'name' => mt_rand(1111111,9999999)
-            ]
-        );
+        //User::create(
+        //    [
+        //        'name' => mt_rand(1111111,9999999)
+        //    ]
+        //);
 
 
     }
