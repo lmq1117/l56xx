@@ -430,7 +430,7 @@ function trans2to16($s2)
     $s16 = '';
     for ($i = 1; $i <= ceil(strlen($s2) / 4); $i++) {
         //$s2g = substr($s2, $i == 1 ? 0 : min(4, strlen($s2) % 4) + ($i - 2) * 4, $i == 1 && strlen($s2) % 4 != 0 ? min(4, strlen($s2) % 4) : 4);
-        $s2g = substr($s2, 4 * $i - 1 > 0 ? 4 * $i - 1 : 0, 4);// ???????
+        $s2g = substr($s2, 4 * ($i - 1), 4);// ???????
         echo $s2g . "\r\n";
 
 
