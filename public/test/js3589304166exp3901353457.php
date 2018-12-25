@@ -554,7 +554,7 @@ function trans16to2($s16)
 
 
 //00c4c9148f586a39fb82dcf278d9e05a2b7f42fb470044a4dc73b455bf31c8e6b6c1b713a8dd6eea88fb8ebd1c90b41150c953eb6885101b0001e406ac6365748566e4ad45ac14d69d444bbeb51dc4c0c51c43b0e5163b9029a4a96530f5e91f8aead21643364c22825c15abe1645a3b5e763aedcc2b26a70eeba9fba6246acfd302
-$n16 = str_replace(' ', '', "00c4 c914 8f586a39 fb82 dcf2 78d9 e05a 2b7f 42fb 470044a4 dc73 b455 bf31 c8e6 b6c1 b713 a8dd6eea 88fb 8ebd 1c90 b411 50c9 53eb 6885101b 0001 e406 ac63 6574 8566 e4ad 45ac14d6 9d44 4bbe b51d c4c0 c51c 43b0 e5163b90 29a4 a965 30f5 e91f 8aea d216 43364c22 825c 15ab e164 5a3b 5e76 3aed cc2b26a7 0eeb a9fb a624 6acf d302");
+//$n16 = str_replace(' ', '', "00c4 c914 8f586a39 fb82 dcf2 78d9 e05a 2b7f 42fb 470044a4 dc73 b455 bf31 c8e6 b6c1 b713 a8dd6eea 88fb 8ebd 1c90 b411 50c9 53eb 6885101b 0001 e406 ac63 6574 8566 e4ad 45ac14d6 9d44 4bbe b51d c4c0 c51c 43b0 e5163b90 29a4 a965 30f5 e91f 8aea d216 43364c22 825c 15ab e164 5a3b 5e76 3aed cc2b26a7 0eeb a9fb a624 6acf d302");
 //echo '$n16 ' . $n16 . "\r\n";
 //$n2 = trans16to2($n16);
 //
@@ -563,9 +563,9 @@ $n16 = str_replace(' ', '', "00c4 c914 8f586a39 fb82 dcf2 78d9 e05a 2b7f 42fb 47
 //echo '$n16t ' . $n16t . "\r\n";
 
 
-$d16 = str_replace(' ', '', 'b5aa 000d f90c 4fac cd79 556a9590 950d 74b5 8c2d 56a5 0820 efbb ba31002f bc35 590d bedb 7458 51b1 d5b1 4709d8d8 32e8 0684 2f5d 5501 b23b 4683 90599284 f594 1729 28cf 8d7d 0821 46cf b51699ef 675f c50d ee36 810a 889d 838b 4eb0a1f4 73eb a794 dbc2 6bda a886 974c 0f15dc1c 49ff 1cd1 d4fc 6f8c f63c f69c 90e0195e 9089');
+//$d16 = str_replace(' ', '', 'b5aa 000d f90c 4fac cd79 556a9590 950d 74b5 8c2d 56a5 0820 efbb ba31002f bc35 590d bedb 7458 51b1 d5b1 4709d8d8 32e8 0684 2f5d 5501 b23b 4683 90599284 f594 1729 28cf 8d7d 0821 46cf b51699ef 675f c50d ee36 810a 889d 838b 4eb0a1f4 73eb a794 dbc2 6bda a886 974c 0f15dc1c 49ff 1cd1 d4fc 6f8c f63c f69c 90e0195e 9089');
 
-$p16 = str_replace(' ', '', 'e0 a2c3 ed54 bc7f 3285ca9e 7d73 46ce d2f7 7943 80b7 ed51 fa2fb45c 2366 1c4c a207 819a ff7b a30e 451a1484 0822 ccbc c3ab eabc fe34 0c65 8e974f66 399c 619b 0d');
+//$p16 = str_replace(' ', '', 'e0 a2c3 ed54 bc7f 3285ca9e 7d73 46ce d2f7 7943 80b7 ed51 fa2fb45c 2366 1c4c a207 819a ff7b a30e 451a1484 0822 ccbc c3ab eabc fe34 0c65 8e974f66 399c 619b 0d');
 
 //echo '$p16 ' . $p16 . "\r\n";
 //$p2 = trans16to10($p16);
@@ -574,15 +574,15 @@ $p16 = str_replace(' ', '', 'e0 a2c3 ed54 bc7f 3285ca9e 7d73 46ce d2f7 7943 80b7
 //$p16t = trans10to16($p2);
 //echo '$p16t ' . $p16t . "\r\n";
 //exit;
-$q16 = str_replace(' ', '', 'e042 d9d9 e51ae31e 0f57 0305 19f7 6abd c54a 6fcf 801f4f76 332b 4c09 06f8 96ce b08b 6e57 44505d00 11b9 f97a 5118 01c0 d057 d77a dd21028d 5201 e7d1 6371 de5f');
-echo 'n10 ' . trans16to10($n16) . "\r\n";
-echo 'n16 ' . $n16 . "\r\n";
-//echo 'n16-2 ' . trans10to16(trans16to10($n16)) . "\r\n";
-
-echo 'p10 * q10 ' . xMultiplyY(trans16to10($p16), trans16to10($q16)) . "\r\n";
-echo 'p10 ' . trans16to10($p16) . "\r\n";
-echo 'q10 ' . trans16to10($q16) . "\r\n";
-exit;
+//$q16 = str_replace(' ', '', 'e042 d9d9 e51ae31e 0f57 0305 19f7 6abd c54a 6fcf 801f4f76 332b 4c09 06f8 96ce b08b 6e57 44505d00 11b9 f97a 5118 01c0 d057 d77a dd21028d 5201 e7d1 6371 de5f');
+//echo 'n10 ' . trans16to10($n16) . "\r\n";
+//echo 'n16 ' . $n16 . "\r\n";
+////echo 'n16-2 ' . trans10to16(trans16to10($n16)) . "\r\n";
+//
+//echo 'p10 * q10 ' . xMultiplyY(trans16to10($p16), trans16to10($q16)) . "\r\n";
+//echo 'p10 ' . trans16to10($p16) . "\r\n";
+//echo 'q10 ' . trans16to10($q16) . "\r\n";
+//exit;
 
 
 function xRand()
