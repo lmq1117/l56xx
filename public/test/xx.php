@@ -2,8 +2,7 @@
 set_time_limit(0);
 ini_set('memory_limit', '-1');
 
-
-//echo xPowerY(2790, 27530) . "\r\n";
+//echo xPowerY(2790, 2753) . "\r\n";
 
 /**
  * 乘方
@@ -25,8 +24,6 @@ function xPowerY($x, $y)
     }
     //return ltrim($product, '0');
     return ltrim($product) == '' ? 0 : ltrim($product, '0');
-
-
 }
 
 
@@ -61,6 +58,8 @@ function xMultiplyY($x, $y, $arrL = 20000)
             $yArr[$arrL - 1 + $i + strlen($x) - strlen($y)] = substr($y, $i, 1);
         }
     }
+    //print_r($xArr);
+    //print_r($yArr);exit;
 
 //几行
     $line = [];
@@ -135,8 +134,32 @@ function xMultiplyY($x, $y, $arrL = 20000)
     return ltrim(join($result), '0') == '' ? 0 : ltrim(join($result), '0');
 }
 
-//echo xMultiplyY('33478071698956898786044169848212690817704794983713768568912431388982883793878002287614711652531743087737814467999489', '36746043666799590428244633799627952632279158164343087642676032283815739666511279233373417143396810270092798736308917'); exit;
+for($i = 0;$i<100000;$i++){
+    $lx = mt_rand(11,30);
+    $ly = mt_rand(11,30);
+    $x = mt_rand((int)str_repeat(1,$lx),(int)str_repeat(9,$lx));
+    $y = mt_rand((int)str_repeat(1,$ly),(int)str_repeat(9,$ly));
+    $xy = xMultiplyY($x,$y);
+    $y2 = xDivisionY($xy,$x);
+    if(xCompY($y,$y2) != 0){
+        echo "算错咯$x----$y\r\n";
+    }
 
+}
+//echo xMultiplyY('1176513159718', '117455087745460') . "\r\n";
+//echo xDivisionY('138187456408366085509380280', '117455087745460') . "\r\n";
+exit;
+
+function xMultiplyYByPlus($x,$y)
+{
+    if (strlen($x) < strlen($y)) {
+        $tmp = $y;
+        $y = $x;
+        $x = $tmp;
+    }
+
+
+}
 
 function xPlusY($x, $y, $arrL = 20000)
 {
@@ -153,6 +176,7 @@ function xPlusY($x, $y, $arrL = 20000)
     }
 
     $productUp = 0;
+
     for ($i = $arrL + strlen($x) - 2; $i >= $arrL - 1; $i--) {
         $sum = $xArr[$i] + ($yArr[$i] ?? 0);
         if ($productUp == 0) {
@@ -171,12 +195,13 @@ function xPlusY($x, $y, $arrL = 20000)
                 $res[$i] = substr($sum, 0, 1);
                 $productUp = 0;
             }
-            if ($i <= $arrL - 1 && $productUp > 0) {
-                $res[$i - 1] = $productUp;
-                $productUp = 0;
-            }
+
         }
 
+        if ($i <= $arrL - 1 && $productUp > 0) {
+            $res[$i - 1] = $productUp;
+            $productUp = 0;
+        }
     }
 
     ksort($res);
@@ -184,6 +209,7 @@ function xPlusY($x, $y, $arrL = 20000)
     return ltrim(join($res), '0') == '' ? 0 : ltrim(join($res), '0');
 
 }
+
 
 //echo xPlusY(999, 199);
 
@@ -224,6 +250,7 @@ function xSubtractY($x, $y, $arrL = 20000)
     return ltrim(join($res), '0') == '' ? 0 : ltrim(join($res), '0');
 }
 
+
 //echo xSubtractY(19887, 887);
 
 /**
@@ -257,6 +284,7 @@ function xDivisionY($x, $y, $arrL = 20000)
     krsort($shang);
     return ltrim(join($shang), '0') == '' ? 0 : ltrim(join($shang), '0');
 }
+
 
 //echo xDivisionY('1230186684530117755130494958384962720772853569595334792197322452151726400507263657518745202199786469389956474942774063845925192557326303453731548268507917026122142913461670429214311602221240479274737794080665351419597459856902143413', '33478071698956898786044169848212690817704794983713768568912431388982883793878002287614711652531743087737814467999489');exit;
 //echo xCompY(173, 123);
@@ -358,10 +386,19 @@ function trans16to10($s16)
     $s10 = '0';
     for ($i = 0; $i < strlen($s16); $i++) {
 
+        //echo $map[substr(strrev($s16), $i, 1)].'---';
+        //echo $s10 . '--' . xMultiplyY(xPowerY(16, $i), $map[substr(strrev($s16), $i, 1)]) . '---';
         $s10 = xPlusY($s10, xMultiplyY(xPowerY(16, $i), $map[substr(strrev($s16), $i, 1)]));
+        //echo $s10 . '==';
     }
     return $s10;
 }
+
+//for ($i = 0; $i <= 257; $i++) {
+//    //echo 111;
+//    echo base_convert($i, 10, 16) . ' ' . trans16to10(base_convert($i, 10, 16)) . "\r\n";
+//}
+//echo trans16to10('6a') . "\r\n";
 
 function trans10to16($s10)
 {
@@ -399,8 +436,12 @@ function trans10to2($s10)
     return $s2;
 }
 
-//echo trans10to2(12) . "\r\n";
-
+//for($i = 0;$i<=257;$i++){
+//
+//    echo $i .' '.trans10to2($i) . "\r\n";
+//}
+//echo "\r\n";
+//exit;
 function trans2to16($s2)
 {
 
@@ -431,7 +472,7 @@ function trans2to16($s2)
     for ($i = 1; $i <= ceil(strlen($s2) / 4); $i++) {
         //$s2g = substr($s2, $i == 1 ? 0 : min(4, strlen($s2) % 4) + ($i - 2) * 4, $i == 1 && strlen($s2) % 4 != 0 ? min(4, strlen($s2) % 4) : 4);
         $s2g = substr($s2, 4 * ($i - 1), 4);// ???????
-        echo $s2g . "\r\n";
+        //echo $s2g . "\r\n";
 
 
         //echo $s2g . '-';
@@ -460,42 +501,6 @@ function trans2to16($s2)
     return $s16;
 }
 
-//echo trans2to16('0')."\r\n";
-//echo trans2to16('1')."\r\n";
-//echo trans2to16('10')."\r\n";
-//echo trans2to16('11')."\r\n";
-//echo trans2to16('100')."\r\n";
-//echo trans2to16('101')."\r\n";
-//echo trans2to16('110')."\r\n";
-//echo trans2to16('111')."\r\n";
-//echo trans2to16('1000')."\r\n";
-//echo trans2to16('1001')."\r\n";
-//echo trans2to16('1010')."\r\n";
-//echo trans2to16('1011')."\r\n";
-//echo trans2to16('1100')."\r\n";
-//echo trans2to16('1101')."\r\n";
-//echo trans2to16('1110')."\r\n";
-//echo trans2to16('1111')."\r\n";
-//
-//echo trans2to16('10000')."\r\n";
-//echo trans2to16('10001')."\r\n";
-//echo trans2to16('10010')."\r\n";
-//echo trans2to16('10011')."\r\n";
-//echo trans2to16('10100')."\r\n";
-//echo trans2to16('10101')."\r\n";
-//echo trans2to16('10110')."\r\n";
-//echo trans2to16('10111')."\r\n";
-//echo trans2to16('11000')."\r\n";
-//echo trans2to16('11001')."\r\n";
-//echo trans2to16('11010')."\r\n";
-//echo trans2to16('11011')."\r\n";
-//echo trans2to16('11100')."\r\n";
-//echo trans2to16('11101')."\r\n";
-//echo trans2to16('11110')."\r\n";
-//echo trans2to16('11111')."\r\n";
-//echo trans2to16('100000')."\r\n";exit;
-
-//echo ceil(5/4);exit;
 
 //echo trans16to10('f955397') . "\r\n";
 //exit;
@@ -550,22 +555,34 @@ function trans16to2($s16)
 
 //00c4c9148f586a39fb82dcf278d9e05a2b7f42fb470044a4dc73b455bf31c8e6b6c1b713a8dd6eea88fb8ebd1c90b41150c953eb6885101b0001e406ac6365748566e4ad45ac14d69d444bbeb51dc4c0c51c43b0e5163b9029a4a96530f5e91f8aead21643364c22825c15abe1645a3b5e763aedcc2b26a70eeba9fba6246acfd302
 $n16 = str_replace(' ', '', "00c4 c914 8f586a39 fb82 dcf2 78d9 e05a 2b7f 42fb 470044a4 dc73 b455 bf31 c8e6 b6c1 b713 a8dd6eea 88fb 8ebd 1c90 b411 50c9 53eb 6885101b 0001 e406 ac63 6574 8566 e4ad 45ac14d6 9d44 4bbe b51d c4c0 c51c 43b0 e5163b90 29a4 a965 30f5 e91f 8aea d216 43364c22 825c 15ab e164 5a3b 5e76 3aed cc2b26a7 0eeb a9fb a624 6acf d302");
-echo '$n16 ' . $n16 . "\r\n";
-$n2 = trans16to2($n16);
+//echo '$n16 ' . $n16 . "\r\n";
+//$n2 = trans16to2($n16);
+//
+//echo '$n2 ' . $n2 . "\r\n";
+//$n16t = trans2to16($n2);
+//echo '$n16t ' . $n16t . "\r\n";
 
-echo '$n2 ' . $n2 . "\r\n";
-$n16t = trans2to16($n2);
-echo '$n16t ' . $n16t . "\r\n";
-exit;
 
 $d16 = str_replace(' ', '', 'b5aa 000d f90c 4fac cd79 556a9590 950d 74b5 8c2d 56a5 0820 efbb ba31002f bc35 590d bedb 7458 51b1 d5b1 4709d8d8 32e8 0684 2f5d 5501 b23b 4683 90599284 f594 1729 28cf 8d7d 0821 46cf b51699ef 675f c50d ee36 810a 889d 838b 4eb0a1f4 73eb a794 dbc2 6bda a886 974c 0f15dc1c 49ff 1cd1 d4fc 6f8c f63c f69c 90e0195e 9089');
 
 $p16 = str_replace(' ', '', 'e0 a2c3 ed54 bc7f 3285ca9e 7d73 46ce d2f7 7943 80b7 ed51 fa2fb45c 2366 1c4c a207 819a ff7b a30e 451a1484 0822 ccbc c3ab eabc fe34 0c65 8e974f66 399c 619b 0d');
-$q16 = str_replace(' ', '', 'e042 d9d9 e51ae31e 0f57 0305 19f7 6abd c54a 6fcf 801f4f76 332b 4c09 06f8 96ce b08b 6e57 44505d00 11b9 f97a 5118 01c0 d057 d77a dd21028d 5201 e7d1 6371 de5f');
 
-echo 'p10 * q10 ' . xMultiplyY(trans16to10($p16), trans16to10($q16)) . "\r\n";
-echo 'p10 ' . trans16to10($p16) . "\r\n";
-echo 'q10 ' . trans16to10($q16) . "\r\n";
+//echo '$p16 ' . $p16 . "\r\n";
+//$p2 = trans16to10($p16);
+//
+//echo '$p2 ' . $p2 . "\r\n";
+//$p16t = trans10to16($p2);
+//echo '$p16t ' . $p16t . "\r\n";
+//exit;
+$q16 = str_replace(' ', '', 'e042 d9d9 e51ae31e 0f57 0305 19f7 6abd c54a 6fcf 801f4f76 332b 4c09 06f8 96ce b08b 6e57 44505d00 11b9 f97a 5118 01c0 d057 d77a dd21028d 5201 e7d1 6371 de5f');
+echo 'n10 ' . trans16to10($n16) . "\r\n";
+echo 'n16 ' . $n16 . "\r\n";
+echo 'n16-2 ' . trans10to16(trans16to10($n16)) . "\r\n";
+
+//echo 'p10 * q10 ' . xMultiplyY(trans16to10($p16), trans16to10($q16)) . "\r\n";
+//echo 'p10 ' . trans16to10($p16) . "\r\n";
+//echo 'q10 ' . trans16to10($q16) . "\r\n";
+exit;
 
 
 function xRand()
