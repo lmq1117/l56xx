@@ -134,21 +134,21 @@ function xMultiplyY($x, $y, $arrL = 20000)
     return ltrim(join($result), '0') == '' ? 0 : ltrim(join($result), '0');
 }
 
-for($i = 0;$i<100000;$i++){
-    $lx = mt_rand(11,30);
-    $ly = mt_rand(11,30);
-    $x = mt_rand((int)str_repeat(1,$lx),(int)str_repeat(9,$lx));
-    $y = mt_rand((int)str_repeat(1,$ly),(int)str_repeat(9,$ly));
-    $xy = xMultiplyY($x,$y);
-    $y2 = xDivisionY($xy,$x);
-    if(xCompY($y,$y2) != 0){
-        echo "算错咯$x----$y\r\n";
-    }
-
-}
-//echo xMultiplyY('1176513159718', '117455087745460') . "\r\n";
-//echo xDivisionY('138187456408366085509380280', '117455087745460') . "\r\n";
-exit;
+//for($i = 0;$i<100000;$i++){
+//    $lx = mt_rand(11,30);
+//    $ly = mt_rand(11,30);
+//    $x = mt_rand((int)str_repeat(1,$lx),(int)str_repeat(9,$lx));
+//    $y = mt_rand((int)str_repeat(1,$ly),(int)str_repeat(9,$ly));
+//    $xy = xMultiplyY($x,$y);
+//    $y2 = xDivisionY($xy,$x);
+//    if(xCompY($y,$y2) != 0){
+//        echo "算错咯$x----$y\r\n";
+//    }
+//
+//}
+////echo xMultiplyY('1176513159718', '117455087745460') . "\r\n";
+////echo xDivisionY('138187456408366085509380280', '117455087745460') . "\r\n";
+//exit;
 
 function xMultiplyYByPlus($x,$y)
 {
@@ -577,11 +577,11 @@ $p16 = str_replace(' ', '', 'e0 a2c3 ed54 bc7f 3285ca9e 7d73 46ce d2f7 7943 80b7
 $q16 = str_replace(' ', '', 'e042 d9d9 e51ae31e 0f57 0305 19f7 6abd c54a 6fcf 801f4f76 332b 4c09 06f8 96ce b08b 6e57 44505d00 11b9 f97a 5118 01c0 d057 d77a dd21028d 5201 e7d1 6371 de5f');
 echo 'n10 ' . trans16to10($n16) . "\r\n";
 echo 'n16 ' . $n16 . "\r\n";
-echo 'n16-2 ' . trans10to16(trans16to10($n16)) . "\r\n";
+//echo 'n16-2 ' . trans10to16(trans16to10($n16)) . "\r\n";
 
-//echo 'p10 * q10 ' . xMultiplyY(trans16to10($p16), trans16to10($q16)) . "\r\n";
-//echo 'p10 ' . trans16to10($p16) . "\r\n";
-//echo 'q10 ' . trans16to10($q16) . "\r\n";
+echo 'p10 * q10 ' . xMultiplyY(trans16to10($p16), trans16to10($q16)) . "\r\n";
+echo 'p10 ' . trans16to10($p16) . "\r\n";
+echo 'q10 ' . trans16to10($q16) . "\r\n";
 exit;
 
 
