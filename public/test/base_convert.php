@@ -1,13 +1,14 @@
 <?php
-echo "18 " . base_convert(18, 10, 2) . "\r\n";
-echo "53 " . base_convert(53, 10, 2) . "\r\n";
-echo "50 " . base_convert(50, 10, 2) . "\r\n";
-echo "62 " . base_convert(62, 10, 2) . "\r\n";
-echo "11 " . base_convert(11, 10, 2) . "\r\n";
-echo "48 " . base_convert(48, 10, 2) . "\r\n";
+echo "37 " . base_convert(37, 10, 2) . "\r\n";
+echo "4 " . base_convert(4, 10, 2) . "\r\n";
+echo "39 " . base_convert(39, 10, 2) . "\r\n";
+echo "59 " . base_convert(59, 10, 2) . "\r\n";
+echo "40 " . base_convert(40, 10, 2) . "\r\n";
+echo "32 " . base_convert(32, 10, 2) . "\r\n";
 // echo "011000 " . base_convert(11000, 2, 10) . "\r\n";
-echo "01001011 " . base_convert("01001011", 2, 10) . "\r\n";
-echo "01011100 " . base_convert("01011100", 2, 10) . "\r\n";
-echo "10111110 " . base_convert("10111110", 2, 10) . "\r\n";
-echo "00101111 " . base_convert("00101111", 2, 10) . "\r\n";
-echo "00101111 " . base_convert("01001011010111001011111000101111", 2, 10) . "\r\n";
+echo "01001011 " . base_convert("10010100", 2, 10) . "\r\n";
+echo "01011100 " . base_convert("01001001", 2, 10) . "\r\n";
+echo "10111110 " . base_convert("11111011", 2, 10) . "\r\n";
+echo "00101111 " . base_convert("10100010", 2, 10) . "\r\n";
+echo "00101111 " . base_convert("10010100010010011111101110100010", 2, 10) . "\r\n";
+echo "00101111 " . base_convert("10010100010010011111101110100010", 2, 10) . "\r\n";

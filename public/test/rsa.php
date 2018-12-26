@@ -3,7 +3,7 @@
 include './libs/key.php';
 
 //待加密的字符
-$str = 'a';
+$str = 'abcd';
 
 //使用公钥加密
 $status = openssl_public_encrypt(str_pad($str, 4, "\0", STR_PAD_LEFT), $encodeStr, $publicKey, OPENSSL_NO_PADDING);
