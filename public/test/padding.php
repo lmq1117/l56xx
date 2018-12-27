@@ -1,6 +1,6 @@
 <?php
 //引入key文件
-include './libs/ke+y.php';
+include './libs/key.php';
 
 //待加密的字符
 $str = 'abcd';
