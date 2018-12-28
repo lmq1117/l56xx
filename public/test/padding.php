@@ -6,7 +6,7 @@ include './libs/key.php';
 $str = 'abcd';
 
 //使用公钥加密
-$status = openssl_public_encrypt(str_pad($str, 4, "\0", STR_PAD_LEFT), $encodeStr, $publicKey, OPENSSL_NO_PADDING);
+$status = openssl_public_encrypt(str_pad($str, 4, "\0", STR_PAD_LEFT), $encodeStr, $publicKey, OPENSSL_PKCS1_PADDING);
 //var_dump($status);
 
 //$encodeStr 加密后的字符串 base64_encode后是  1fBvZg==   l1
@@ -15,7 +15,7 @@ echo "密文base64后是：" . base64_encode($encodeStr) . "\r\n";
 //var_dump(base64_encode($encodeStr));
 
 
-$status = openssl_private_decrypt($encodeStr, $decryptedStr, $privateKey, OPENSSL_NO_PADDING);
+$status = openssl_private_decrypt($encodeStr, $decryptedStr, $privateKey, OPENSSL_PKCS1_PADDING);
 echo '解密后明文是：' . $decryptedStr . "\r\n";
 
 
